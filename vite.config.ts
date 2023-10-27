@@ -3,8 +3,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 // plugin
 import { createHtmlPlugin } from 'vite-plugin-html'
-// import VitePluginLinaria from 'vite-plugin-linaria'
-import pluginLinaria from '@linaria/rollup';
+import linaria from '@linaria/vite';
+
 
 
 // https://vitejs.dev/config/
@@ -14,12 +14,14 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  server: {
-    port: 8080
-  },
+
+  // server: {
+  //   port: 8080
+  // },
+
   plugins: [
     react(),
-    pluginLinaria(),
+    linaria(),
 
     createHtmlPlugin({
       minify: true,
